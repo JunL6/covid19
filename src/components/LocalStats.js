@@ -1,12 +1,11 @@
 import React from "react";
 import StatsDisplay from "./StatsDisplay";
-import { useGeoLocation, useIpLocation } from "../utils/useLocation";
+import useGeoLocation from "../utils/useGeoLocation";
+// import getGeoLocation from "../utils/getGeoLocation";
 
 import useStats from "../utils/useStats";
 
 const LocalStats = () => {
-  const location = useGeoLocation();
-  location && console.log(location);
   // const location = useIpLocation();
 
   // const countryCode = location.countryCode;
@@ -51,7 +50,16 @@ const LocalStats = () => {
   //   </div>
   // );
 
-  return <div>location</div>;
+  const location = useGeoLocation();
+  // location && console.log(location);
+  // const location = getGeoLocation();
+
+  return (
+    <div>
+      {location ? location && location.country : `loading...`}
+      {location ? location && location.region : `loading...`}
+    </div>
+  );
 };
 
 export default LocalStats;
