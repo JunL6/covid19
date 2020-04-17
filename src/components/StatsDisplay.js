@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import useStats from "../utils/useStats";
 import "../css/StatsDisplay.css";
 

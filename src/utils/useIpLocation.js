@@ -1,4 +1,4 @@
-import React, { setState } from "react";
+import { useState, useEffect } from "react";
 
 export default function useIpLocation() {
   const [ipLocation, setIpLocation] = useState(`loading...`);
