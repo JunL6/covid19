@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import useStats from "../utils/useStats";
 import "../css/StatsDisplay.css";
 
@@ -17,6 +17,15 @@ function StatsDisplay({ url }) {
       <div>
         Recovered:{" "}
         {data ? data.confirmed && data.recovered.value : `loading...`}
+      </div>
+      <div>
+        Fatality Rate:
+        {data
+          ? `${
+              data.confirmed &&
+              (data.deaths.value / data.confirmed.value).toFixed(3) * 100
+            }%`
+          : `loading...`}
       </div>
     </div>
   );
