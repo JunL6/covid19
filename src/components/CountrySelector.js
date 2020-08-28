@@ -1,11 +1,15 @@
 import React, { useState } from "react";
+import { Form } from "react-bootstrap";
+
 import StatsDisplay from "./StatsDisplay";
 import useStats from "../utils/useStats";
 
-export default function CountrySelector() {
-  const [selectedCountryCode, setSelectedCountryCode] = useState("");
+const URL_COUNTRIES = "https://covid19.mathdro.id/api/countries";
 
-  const countries = useStats(`https://covid19.mathdro.id/api/countries`);
+export default function CountrySelector() {
+  const [selectedCountryCode, setSelectedCountryCode] = useState("AFG");
+
+  const countries = useStats(URL_COUNTRIES);
   function renderCountryList(countries) {
     if (!countries) {
       return `loading...`;
@@ -22,21 +26,22 @@ export default function CountrySelector() {
       return result;
     }
   }
-  const url_selectedCountry = `https://covid19.mathdro.id/api/countries/${selectedCountryCode}`;
+  const url_selectedCountry = URL_COUNTRIES + `/${selectedCountryCode}`;
 
   return (
     <div className="panel panel-countryselector">
-      <h3>Select a country to see stats</h3>
-      <div>
-        <select
+      <Form>
+        <h3>Select a country to see stats: {selectedCountryCode}</h3>
+        <Form.Control
+          as="select"
+          style={{ maxWidth: "400px" }}
           onChange={(e) => {
             setSelectedCountryCode(e.target.value);
           }}
         >
           {renderCountryList(countries)}
-        </select>
-        <span>selected country: {selectedCountryCode}</span>
-      </div>
+        </Form.Control>
+      </Form>
       <StatsDisplay url={url_selectedCountry} />
     </div>
   );

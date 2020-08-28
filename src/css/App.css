@@ -1,5 +1,6 @@
 .app {
-  font-size: 40px;
+  font-size: 1rem;
+  background-color: #f7f7f7;
 }
 
 .app h3 {
@@ -7,5 +8,9 @@
 }
 
 .panel {
-  margin: 40px;
+  padding: 40px;
+}
+
+.cards {
+  padding: 20px 0;
 }

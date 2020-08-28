@@ -4,9 +4,10 @@ import { Chart } from "react-google-charts";
 const urlEarthDaily = "https://covid19.mathdro.id/api/daily";
 
 const options = {
-  title: "Total stats on earth",
+  title: "New Cases on Earth",
   hAxis: { title: "Date" },
   vAxis: { title: "Number" },
+  backgroundColor: "#f7f7f7",
   // legend: "none",
 };
 const data = [
@@ -29,8 +30,8 @@ export default function EarthStats() {
       [
         "Date",
         // { type: "date", label: "Day" },
-        "Confirmed",
-        "Deaths",
+        // "Confirmed",
+        // "Deaths",
         "New cases",
       ],
     ];
@@ -41,8 +42,8 @@ export default function EarthStats() {
         data.map((obj) => {
           statsArray.push([
             obj.reportDate,
-            obj.confirmed.total,
-            obj.deaths.total,
+            // obj.confirmed.total,
+            // obj.deaths.total,
             obj.deltaConfirmed,
           ]);
         });
