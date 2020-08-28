@@ -1,1 +1,0 @@
-{"version":3,"sources":["App.css"],"names":[],"mappings":"AAAA,KACE,cAAe,CACf,wBACF,CAEA,QACE,QACF,CAEA,OACE,YACF,CAEA,OACE,cACF","file":"main.74e7ce78.chunk.css","sourcesContent":[".app {\n  font-size: 1rem;\n  background-color: #f7f7f7;\n}\n\n.app h3 {\n  margin: 0;\n}\n\n.panel {\n  padding: 40px;\n}\n\n.cards {\n  padding: 20px 0;\n}\n"]}
