@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Container, Card } from "react-bootstrap";
 
 import StatsDisplay from "./StatsDisplay";
 // import LocalStats from "./LocalStats";
@@ -9,20 +9,21 @@ import EarthStats from "./EarthStats";
 import "../css/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const urlEarth = "https://covid19.mathdro.id/api";
-
 const App = () => {
   return (
     <Container fluid className="app">
-      Covid-19 Stats
-      <div className="panel panel-earth">
-        <h3>Total on Earth: </h3>
-        <StatsDisplay url={urlEarth} />
+      <h2>Covid-19 Stats</h2>
+
+      <Card className="panel">
         <EarthStats />
-      </div>
+      </Card>
       {/* <LocalStats /> */}
-      <GeoLocationStats />
-      <CountrySelector />
+      <Card className="panel">
+        <GeoLocationStats />
+      </Card>
+      <Card className="panel">
+        <CountrySelector />
+      </Card>
     </Container>
   );
 };

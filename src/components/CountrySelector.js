@@ -29,7 +29,7 @@ export default function CountrySelector() {
   const url_selectedCountry = URL_COUNTRIES + `/${selectedCountryCode}`;
 
   return (
-    <div className="panel panel-countryselector">
+    <div className="m-5">
       <Form>
         <h3>Select a country to see stats: {selectedCountryCode}</h3>
         <Form.Control
