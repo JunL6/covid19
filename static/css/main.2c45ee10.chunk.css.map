@@ -1,1 +1,0 @@
-{"version":3,"sources":["StatsDisplay.css","App.css"],"names":[],"mappings":"AAAA,eACE,wBACF,CCFA,KACE,cACF,CAEA,QACE,QACF,CAEA,OACE,WACF","file":"main.2c45ee10.chunk.css","sourcesContent":[".stats-display {\n  background-color: aquamarine;\n}\n",".app {\n  font-size: 40px;\n}\n\n.app h3 {\n  margin: 0;\n}\n\n.panel {\n  margin: 40px;\n}\n"]}
